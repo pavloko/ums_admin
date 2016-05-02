@@ -1,0 +1,40 @@
+<md-dialog class="auth-dialog" role="dialog" aria-label="Login dialog">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Вход</h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="auth-progress" ng-show="$ctrl.isSubmitting">
+        <md-progress-circular class="auth-progress__spinner"
+          md-mode="indeterminate" md-diameter="100"></md-progress-circular>
+      </div>
+      <div class="md-dialog-content">
+        <div class="error" ng-show="$ctrl.errors">
+          {{ $ctrl.errors }}
+        </div>
+        <md-input-container class="md-icon-float md-block">
+          <label>E-mail</label>
+          <md-icon aria-label="Login" class="icons"
+            md-font-icon="ion-android-person">
+          </md-icon>
+          <input type="text" ng-model="$ctrl.user.email">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Пароль</label>
+          <md-icon aria-label="Password" class="icons" md-font-icon="ion-locked">
+          </md-icon>
+          <input type="password" ng-model="$ctrl.user.password">
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+      <md-button aria-lable="Cancel Login"
+        ng-click="$ctrl.closeDialog()">Назад</md-button>
+      <md-button aria-label="Login" ng-click="$ctrl.login()">Войти</md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
