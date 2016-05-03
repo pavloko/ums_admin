@@ -21,7 +21,7 @@ function AppConfig ($stateProvider, $locationProvider, $urlRouterProvider,
   $stateProvider
     .state('app', {
       abstract: true,
-      templateUrl: 'app/layout/app-view.html'
+      template: '<app-view layout="row" flex></app-view>'
     });
 
   $urlRouterProvider.otherwise('/');

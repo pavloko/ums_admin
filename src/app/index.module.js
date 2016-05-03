@@ -15,6 +15,8 @@ import './auth';
 import './services';
 import './helpers';
 
+import './boats';
+
 angular.module('app', [
   'ngMaterial',
   'ngAnimate',
@@ -31,7 +33,8 @@ angular.module('app', [
   'app.dashboard',
   'app.auth',
   'app.services',
-  'app.helpers'
+  'app.helpers',
+  'app.boats'
 ])
   .constant('moment', moment)
   .constant('AppConstants', AppConstants)

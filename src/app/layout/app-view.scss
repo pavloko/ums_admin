@@ -1,0 +1,35 @@
+.site-sidenav {
+  max-width: 300px!important;
+}
+.site-content-toolbar {
+  background: #F6F6F6!important;
+  color: #202020!important;
+}
+
+ul {
+  padding: 0;
+}
+.sidenav__menu {
+  margin: 16px 0;
+}
+
+.sidenav__menu--icon {
+  margin-right: 16px;
+}
+.sidenav__menu li a {
+  display: block;
+  padding: 9px 13px;
+  color:  $black;
+}
+
+.sidenav__menu .active {
+  background: rgba(158,158,158,0.2);
+}
+
+.sidenav__menu li a:hover{
+  background: rgba(158,158,158,0.4);
+}
+
+.game__info p {
+  color: lighten($black, 40%);;
+}

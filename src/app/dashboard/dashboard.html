@@ -1,9 +1,9 @@
 <h1>
-  I'm a dashboard.
-  <div ng-repeat="boat in $ctrl.boats">
-    {{ boat.name }}
-  </div>
   <input type="text" ng-model="$ctrl.boat.name">
   <button ng-click="$ctrl.boats.$add($ctrl.boat)">Add Boat</button>
   <br>
+  <br>
+  <div ng-repeat="boat in $ctrl.boats">
+    {{ $index +1 }}. {{ boat.name }}
+  </div>
 </h1>

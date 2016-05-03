@@ -3,10 +3,13 @@
 // bower:scss
 // endbower
 
+$black: #202020;
+$white: #F6F6F6;
+
 .browsehappy {
   margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
+  background: $white;
+  color: $white;
   padding: 0.2em 0;
 }
 .icons {
@@ -20,6 +23,11 @@
   color: red;
   text-align: center;
 }
+
+.black {
+  color: $black!important;
+}
+
 .auth-progress {
   position: absolute;
   width: 100%;
@@ -33,6 +41,9 @@
   top: 17%;
 }
 
+a {
+  text-decoration: none;
+}
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */
 // injector

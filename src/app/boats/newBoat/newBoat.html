@@ -1,0 +1,45 @@
+<md-card>
+  <md-card-content>
+
+      <form name="newGameForm"
+            ng-submit="newGameForm.$valid && vm.createNewGame()">
+        <md-input-container class="md-block">
+          <label>Название</label>
+          <input name="game_name"
+                 ng-model="vm.game.game_name"
+                 md-maxlength="30"
+                 required>
+          <div ng-messages="newGameForm.game_name.$error">
+            <div ng-message="required">У игры должно быть название.</div>
+            <div ng-message="md-maxlength">
+              Нестоит нагружать мозги, держитесь в пределах 30 символов.
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label>Хараткеристики</label>
+          <input name="game_address"
+                 ng-model="vm.game.game_address"
+                 ng-minlength="10"
+                 md-maxlength="140"
+                 required>
+          <div class="hint"
+               ng-if="newGameForm.game_address.$pristine">
+              Опишите вашу лодку.
+          </div>
+          <div ng-messages="newGameForm.game_address.$error">
+            <div ng-message="required"> Без адреса не найти.</div>
+            <div ng-message="minlength">
+              Слишком коротко, другим игрокам нужно найти это место.
+            </div>
+            <div ng-message="md-maxlength">
+              Так и в Африку попасть можно.
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-button type="submit" class="md-raised md-primary md-button">Создать</md-button>
+      </form>
+    </md-card-content>
+  </md-card>

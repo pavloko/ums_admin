@@ -1,9 +1,10 @@
-class AppHeaderCtrl {
-  constructor(AppConstants, Auth, toastr, $state) {
+class AppHeaderController {
+  constructor(AppConstants, Auth, toastr, $state, $mdSidenav) {
     'ngInject';
     this._Auth = Auth;
     this._toastr = toastr;
     this._$state = $state;
+    this._$mdSidenav = $mdSidenav;
 
     this.appName = AppConstants.appName;
   }
@@ -13,10 +14,14 @@ class AppHeaderCtrl {
     this._$state.go('main')
     this._toastr.success('Хорошего дня!');
   }
+
+  toggleSidenav() {
+    this._$mdSidenav('left').toggle();
+  }
 }
 
 let AppHeader = {
-  controller: AppHeaderCtrl,
+  controller: AppHeaderController,
   templateUrl: 'app/layout/header.html'
 };
 
