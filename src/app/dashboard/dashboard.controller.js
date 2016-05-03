@@ -1,6 +1,9 @@
 class DashboardController {
-  constructor() {
+  constructor(Boats) {
     'ngInject';
+
+    this.Boats = Boats;
+    this.boats = Boats.getBoats();
   }
 }
 

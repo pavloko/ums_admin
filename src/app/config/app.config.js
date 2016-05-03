@@ -21,12 +21,7 @@ function AppConfig ($stateProvider, $locationProvider, $urlRouterProvider,
   $stateProvider
     .state('app', {
       abstract: true,
-      templateUrl: 'app/layout/app-view.html',
-      resolve: {
-        auth: function() {
-
-        }
-      }
+      templateUrl: 'app/layout/app-view.html'
     });
 
   $urlRouterProvider.otherwise('/');

@@ -12,9 +12,9 @@
           md-mode="indeterminate" md-diameter="100"></md-progress-circular>
       </div>
       <div class="md-dialog-content">
-        <div class="error" ng-show="$ctrl.errors">
-          {{ $ctrl.errors }}
-        </div>
+
+        <ums-errors errors="$ctrl.errors"></ums-errors>
+
         <md-input-container class="md-icon-float md-block">
           <label>E-mail</label>
           <md-icon aria-label="Login" class="icons"

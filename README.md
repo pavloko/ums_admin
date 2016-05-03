@@ -15,6 +15,17 @@ Component based architecture written in ES2015 to anticipate migration to Angula
 1. git clone
 2. npm install && bower install
 3. gulp serve
+
 *note: you would need an instance of Firebase to enable full functionality.
 *note: more information about gulp commands can be found at [generator-gulp-angular](https://github.com/Swiip/generator-gulp-angular)
+
 ---
+
+
+LAST STEP:
+Create Boat Service and Connected To Firebase.
+
+Add SideBar and Menu.
+Add Logout to Toolbar (Auth method).
+Add NewBoat form.
+Add Boat's fields form.

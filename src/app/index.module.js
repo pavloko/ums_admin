@@ -12,6 +12,8 @@ import './main';
 import './layout';
 import './dashboard';
 import './auth';
+import './services';
+import './helpers';
 
 angular.module('app', [
   'ngMaterial',
@@ -27,7 +29,9 @@ angular.module('app', [
   'app.main',
   'app.layout',
   'app.dashboard',
-  'app.auth'
+  'app.auth',
+  'app.services',
+  'app.helpers'
 ])
   .constant('moment', moment)
   .constant('AppConstants', AppConstants)

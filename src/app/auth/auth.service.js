@@ -1,5 +1,5 @@
 class Auth {
-  constructor($firebaseAuth, AppConstants, Firebase) {
+  constructor($firebaseAuth, AppConstants, Firebase, $q) {
     'ngInject';
     var ref = new Firebase(AppConstants.firebase);
     this.firebaseAuthObject = $firebaseAuth(ref);
@@ -9,6 +9,7 @@ class Auth {
     this.firebaseAuthObject.$onAuth((auth)=> {
       this.currentUser = auth;
     });
+    this._$q = $q;
   }
 
   attemptAuth(user) {
@@ -24,6 +25,10 @@ class Auth {
 
   requireAuth() {
     return this.firebaseAuthObject.$requireAuth();
+  }
+
+  logout() {
+    return this.firebaseAuthObject.$unauth();
   }
 }
 export default Auth;
