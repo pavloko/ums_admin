@@ -1,45 +1,48 @@
 <md-card>
   <md-card-content>
 
-      <form name="newGameForm"
-            ng-submit="newGameForm.$valid && vm.createNewGame()">
+      <form name="newBoatForm"
+            ng-submit="newBoatForm.$valid && $ctrl.createNewBoat()" novalidate="">
         <md-input-container class="md-block">
           <label>Название</label>
-          <input name="game_name"
-                 ng-model="vm.game.game_name"
+          <input name="name"
+                 ng-model="$ctrl.boat.name"
                  md-maxlength="30"
                  required>
-          <div ng-messages="newGameForm.game_name.$error">
-            <div ng-message="required">У игры должно быть название.</div>
+          <div ng-messages="newBoatForm.name.$error">
+            <div ng-message="required">У лодки должно быть название.</div>
             <div ng-message="md-maxlength">
-              Нестоит нагружать мозги, держитесь в пределах 30 символов.
+              Не нагружайте мозги, держитесь в пределах 30 символов.
             </div>
           </div>
         </md-input-container>
 
         <md-input-container class="md-block">
           <label>Хараткеристики</label>
-          <input name="game_address"
-                 ng-model="vm.game.game_address"
+          <input name="description"
+                 ng-model="$ctrl.boat.description"
                  ng-minlength="10"
                  md-maxlength="140"
                  required>
           <div class="hint"
-               ng-if="newGameForm.game_address.$pristine">
+               ng-if="newBoatForm.description.$pristine">
               Опишите вашу лодку.
           </div>
-          <div ng-messages="newGameForm.game_address.$error">
-            <div ng-message="required"> Без адреса не найти.</div>
+          <div ng-messages="newBoatForm.boat_address.$error">
+            <div ng-message="required">Без описания не получиться.</div>
             <div ng-message="minlength">
-              Слишком коротко, другим игрокам нужно найти это место.
+              Слишком короткое описание, как же клиенты узнают о всех
+              достоинствах?
             </div>
             <div ng-message="md-maxlength">
-              Так и в Африку попасть можно.
+              Не перегружайте клиента информацией.
             </div>
           </div>
         </md-input-container>
 
-        <md-button type="submit" class="md-raised md-primary md-button">Создать</md-button>
+        <md-button type="submit" class="md-raised md-primary md-button">
+          Создать
+        </md-button>
       </form>
     </md-card-content>
   </md-card>

@@ -3,7 +3,7 @@ class DashboardController {
     'ngInject';
 
     this.Boats = Boats;
-    this.boats = Boats.getBoats();
+    this.boats = Boats.getBoats().$loaded().then((boats) => this.boats=boats);
   }
 }
 

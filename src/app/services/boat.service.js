@@ -6,6 +6,7 @@ class Boat {
     this.$firebaseObject = $firebaseObject;
     this.boatRef = boatRef;
     this.$firebaseArray  = $firebaseArray;
+    this.boats = this.$firebaseArray(this.boatRef);
   }
 
   getBoats() {
@@ -14,6 +15,10 @@ class Boat {
 
   getBoat(boatUID) {
     return this.$firebaseObject(this.boatRef.child(boatUID));
+  }
+
+  saveBoat(boat) {
+    return this.boats.$add(boat);
   }
 }
 

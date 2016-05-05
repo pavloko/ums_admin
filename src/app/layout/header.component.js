@@ -1,5 +1,5 @@
 class AppHeaderController {
-  constructor(AppConstants, Auth, toastr, $state, $mdSidenav) {
+  constructor(AppConstants, Auth, toastr, $state, $mdSidenav, $scope) {
     'ngInject';
     this._Auth = Auth;
     this._toastr = toastr;
@@ -7,6 +7,10 @@ class AppHeaderController {
     this._$mdSidenav = $mdSidenav;
 
     this.appName = AppConstants.appName;
+    // Close Sidenav when link to another state is clicked  
+    $scope.$on('$stateChangeStart', function() {
+      $mdSidenav('left').toggle();
+    });
   }
 
   logout() {
