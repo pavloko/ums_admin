@@ -1,5 +1,5 @@
 <md-dialog class="auth-dialog" role="dialog" aria-label="Login dialog">
-  <form>
+  <form name="loginForm" ng-submit="loginForm.$valid && $ctrl.login()">
     <md-toolbar>
       <div class="md-toolbar-tools">
         <h2>Вход</h2>
@@ -34,7 +34,7 @@
     <md-dialog-actions>
       <md-button aria-lable="Cancel Login"
         ng-click="$ctrl.closeDialog()">Назад</md-button>
-      <md-button aria-label="Login" ng-click="$ctrl.login()">Войти</md-button>
+      <md-button type="submit" aria-label="Login">Войти</md-button>
     </md-dialog-actions>
   </form>
 </md-dialog>

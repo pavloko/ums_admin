@@ -17,6 +17,14 @@
           </div>
         </md-input-container>
 
+        <lf-ng-md-file-input lf-files="files" multiple
+            aria-label="Image upload"
+            lf-browse-label="Добавить"
+            lf-remove-label="Удалить"
+            lf-filesize="5MB"
+            lf-placeholder="Выберите фото">
+        </lf-ng-md-file-input>
+
         <md-input-container class="md-block">
           <label>Хараткеристики</label>
           <input name="description"
@@ -28,7 +36,7 @@
                ng-if="newBoatForm.description.$pristine">
               Опишите вашу лодку.
           </div>
-          <div ng-messages="newBoatForm.boat_address.$error">
+          <div ng-messages="newBoatForm.description.$error">
             <div ng-message="required">Без описания не получиться.</div>
             <div ng-message="minlength">
               Слишком короткое описание, как же клиенты узнают о всех

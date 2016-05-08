@@ -1,0 +1,16 @@
+<div>
+  Forms
+  <md-card ng-repeat="form in $ctrl.forms">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline" ng-bind="::form.name"></span>
+        <span class="md-subhead" ng-bind="::form.abbreviation"></span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-actions layout="row" layout-align="end center">
+      <md-button>Удалить</md-button>
+      <md-button
+        ui-sref="app.singleForm({formID: form.$id})">Редактировать</md-button>
+    </md-card-actions>
+  </md-card>
+</div>

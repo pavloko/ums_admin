@@ -14,8 +14,8 @@ import './dashboard';
 import './auth';
 import './services';
 import './helpers';
-
 import './boats';
+import './forms';
 
 angular.module('app', [
   'ngMaterial',
@@ -26,6 +26,7 @@ angular.module('app', [
   'ui.router',
   'toastr',
   'firebase',
+  'lfNgMdFileInput',
 
 
   'app.main',
@@ -34,7 +35,8 @@ angular.module('app', [
   'app.auth',
   'app.services',
   'app.helpers',
-  'app.boats'
+  'app.boats',
+  'app.forms'
 ])
   .constant('moment', moment)
   .constant('AppConstants', AppConstants)

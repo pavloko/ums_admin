@@ -10,7 +10,11 @@
        <span>{{ ::$ctrl.appName }}</span>
      </h2>
      <span flex></span>
-     <md-button class="md-icon-button" aria-label="Logout" ng-click="$ctrl.logout()">
+     <md-button class="md-icon-button" aria-label="Logout"
+                ng-click="$ctrl.logout()">
+       <md-tooltip md-direction="left">
+          Выход
+        </md-tooltip>
        <md-icon aria-label="Login" class="icons black"
          md-font-icon="ion-log-out">
        </md-icon>
