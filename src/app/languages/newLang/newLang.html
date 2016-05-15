@@ -1,0 +1,53 @@
+<md-card>
+  <form name="newLang"
+        ng-submit="newLang.$valid && $ctrl.createNewLang()" novalidate>
+  <md-card-content>
+      <md-input-container class="md-block">
+        <label>Название</label>
+        <input name="name"
+               ng-model="$ctrl.lang.name"
+               md-maxlength="15"
+               required/>
+        <div class="hint"
+              ng-if="newLang.name.$pristine && !newLang.name.$touched">
+            Желательно ввести название языка.
+        </div>
+        <div ng-messages="newLang.name.$error">
+          <div ng-message="required">Нельзя добавить без языка.</div>
+          <div ng-message="md-maxlength">
+            Название должно быть меньше 15 символов.
+          </div>
+        </div>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Аббривиатура</label>
+        <input name="abbreviation"
+               ng-model="$ctrl.lang.abbreviation"
+               md-maxlength="2"
+               required/>
+        <div class="hint"
+              ng-if="newLang.abbreviation.$pristine &&
+                    !newLang.abbreviation.$touched">
+            Аббривиатуры состоят из двух латинских букв.
+        </div>
+        <div ng-messages="newLang.abbreviation.$error">
+          <div ng-message="required">Нельзя добавить без аббривиатуры.</div>
+          <div ng-message="md-maxlength">
+            Сокращения языков состоят из 2-х символов.
+          </div>
+        </div>
+      </md-input-container>
+
+  </md-card-content>
+  <md-card-actions>
+    <md-button ng-click="$ctrl.cancelNewLang()"
+        class="md-raised md-default md-button">
+      Отмена
+    </md-button>
+    <md-button type="submit" class="md-raised md-primary md-button">
+      Добавить
+    </md-button>
+  </md-card-actions>
+  </form>
+</md-card>

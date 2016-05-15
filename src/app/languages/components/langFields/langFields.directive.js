@@ -1,9 +1,8 @@
-function formFields($compile) {
+function langFields($compile) {
   'ngInject';
-  // var formElm = angular.element('<input type="text">');
   return {
     restrict: 'E',
-    templateUrl: 'app/forms/helpers/formFields/formFields.html',
+    templateUrl: 'app/languages/components/langFields/langFields.html',
     replace: true,
     link: function(scope, element) {
       var numberOfFormFields = 1;
@@ -27,4 +26,4 @@ function formFields($compile) {
   }
 }
 
-export default formFields;
+export default langFields;

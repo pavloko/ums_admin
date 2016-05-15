@@ -1,5 +1,3 @@
-/* global moment:false */
-
 // Configuration
 // =============
 import AppConfig from './config/app.config';
@@ -15,7 +13,7 @@ import './auth';
 import './services';
 import './helpers';
 import './boats';
-import './forms';
+import './languages';
 
 angular.module('app', [
   'ngMaterial',
@@ -35,9 +33,8 @@ angular.module('app', [
   'app.services',
   'app.helpers',
   'app.boats',
-  'app.forms'
+  'app.languages'
 ])
-  .constant('moment', moment)
   .constant('AppConstants', AppConstants)
   .constant('AppMessages', AppMessages)
   .config(AppConfig)

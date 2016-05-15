@@ -1,0 +1,19 @@
+<md-card>
+  <form name="newForm"
+        ng-submit="newForm.$valid && $ctrl.createNewForm()" novalidate>
+  <md-card-content>
+      <lang-fields></lang-fields>
+  </md-card-content>
+
+  <md-card-actions layout layout-align="end">
+    <md-button
+      ui-sref="app.viewLang({langID: $ctrl.lang.$id})">
+      Отмена
+    </md-button>
+    <md-button type="submit"
+      class="md-button md-raised md-primary">
+      Добавить
+    </md-button>
+  </md-card-actions>
+  </form>
+</md-card>

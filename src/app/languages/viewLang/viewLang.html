@@ -1,0 +1,18 @@
+<md-card ng-cloak>
+
+  <md-card-content ng-cloak>
+    <h1 ng-bind="::$ctrl.lang.name"></h1>
+    <h2 ng-bind="::$ctrl.lang.abbreviation"></h2>
+    <h4>Поля</h4>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end">
+    <md-button type="submit"
+      ui-sref="app.addLangField({langID: $ctrl.lang.$id})">
+      Добавить Поле
+    </md-button>
+    <md-button type="submit">
+      Редактировать
+    </md-button>
+  </md-card-actions>
+
+</md-card>

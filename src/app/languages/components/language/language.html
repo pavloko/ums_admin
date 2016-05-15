@@ -1,0 +1,15 @@
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline" ng-bind="::$ctrl.lang.name"></span>
+      <span class="md-subhead" ng-bind="::$ctrl.lang.abbreviation"></span>
+    </md-card-title-text>
+  </md-card-title>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button>Удалить</md-button>
+    <md-button
+      ui-sref="app.viewLang({langID: $ctrl.lang.$id})">
+      Редактировать
+    </md-button>
+  </md-card-actions>
+</md-card>

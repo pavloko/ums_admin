@@ -1,6 +1,6 @@
 # UMS Boat Admin Panel
 ---
-[UMS Boat Admin Panel](https://umsboats.firebaseio.com) is an admin module for UMS Boats Android application.
+[UMS Boat Admin Panel](https://umsboats.firebaseapp.com/) is an admin module for UMS Boats Android application.
 
 ### Architecture:
 Component based architecture written in ES2015 to anticipate migration to Angular 2. Firebase is used as a backend; however, authentication and data services wrap Firebase methods to easily switch backend upon need.
