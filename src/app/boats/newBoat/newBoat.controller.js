@@ -1,9 +1,9 @@
 class newBoatController {
-  constructor(Boats, toastr, $state, AppMessages) {
+  constructor(Boats, $mdToast, $state, AppMessages) {
     'ngInject';
 
     this._Boats = Boats;
-    this._toastr = toastr;
+    this._$mdToast = $mdToast;
     this._$state = $state;
     this._AppMessages = AppMessages;
   }
@@ -12,11 +12,11 @@ class newBoatController {
     this._Boats.saveBoat(this.boat)
       .then(
         (boat) => {
-          this._toastr.success(this._AppMessages.newBoatSuccess);
+          this._$mdToast.showSimple(this._AppMessages.newBoatSuccess);
           this._$state.go('app.singleBoat', {boatID: boat.key()});
         },
         () => {
-          this._toastr.error(this._AppMessages.newBoatFail);
+          this._$mdToast.showSimple(this._AppMessages.newBoatFail);
         }
     );
   }

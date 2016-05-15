@@ -24,7 +24,6 @@ angular.module('app', [
   'ngMessages',
   'ngAria',
   'ui.router',
-  'toastr',
   'firebase',
   'lfNgMdFileInput',
 

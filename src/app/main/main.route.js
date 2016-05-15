@@ -8,11 +8,11 @@ function MainRoute($stateProvider) {
       controllerAs: '$ctrl',
       title: 'Main',
       resolve: {
-        isNotAuth: function(Auth, $state, toastr) {
+        isNotAuth: function(Auth, $state, $mdToast) {
           return Auth.requireAuth().then(
             () => {
               $state.go('app.dashboard');
-              toastr.info('Вы уже авторизировались!');
+              $mdToast.showSimple('Вы уже авторизировались!');
             },
             // If noUser resolve route
             () => {
