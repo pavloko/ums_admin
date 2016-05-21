@@ -1,0 +1,32 @@
+<md-card>
+  <form name="newField"
+        ng-submit="newField.$valid && $ctrl.actionFn()" novalidate>
+  <md-card-content>
+     <md-input-container class="md-block">
+       <label ng-bind="::$ctrl.formActionTitle"></label>
+       <input name="name"
+          ng-model="$ctrl.field.fieldLabel"
+          md-maxlength="30"
+          required>
+        <div ng-messages="newField.name.$error">
+          <div ng-message="required">Нельзя добавить пустое поле.</div>
+          <div ng-message="md-maxlength">
+            Поля должны быть не больше
+          </div>
+        </div>
+    </md-input-container>
+  </md-card-content>
+
+  <md-card-actions layout layout-align="end">
+    <md-button
+      ui-sref="app.viewLang({langID: $ctrl.langID})">
+      Отмена
+    </md-button>
+    <md-button type="submit"
+      class="md-button md-raised md-primary"
+      ng-bind="::$ctrl.actionTitle"
+      aria-label="Action">
+    </md-button>
+  </md-card-actions>
+  </form>
+</md-card>

@@ -11,7 +11,7 @@ class NewLangController {
     this._Language.createLang(this.lang).then(
       (langRef) => {
         this._$mdToast.showSimple(this._AppMessages.newFormSuccess);
-        this._$state.go('app.viewLang', {formID: langRef.key()});
+        this._$state.go('app.viewLang', {langID: langRef.key()});
       });
   }
 

@@ -20,12 +20,12 @@ class Language {
     return this.$firebaseObject(this.langRef.child(langID));
   }
 
-  createLangFields(langID) {
-    return this.$firebaseArray(this.langRef.child(langID).child('fields'));
+  destroyLang(langID) {
+    return this.$firebaseArray(this.langRef).$loaded().then(
+      (langs) => {
+        return langs.$remove(langs.$getRecord(langID));
+      });
   }
 
-  destroyLang() {
-
-  }
 }
 export default Language;

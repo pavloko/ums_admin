@@ -3,6 +3,7 @@ class Auth {
     'ngInject';
     var ref = new Firebase(AppConstants.firebase);
     this.firebaseAuthObject = $firebaseAuth(ref);
+
     // Object to store our user properties
     this.currentUser = null;
 
@@ -15,7 +16,7 @@ class Auth {
   attemptAuth(user) {
     return this.firebaseAuthObject.$authWithPassword(user)
       .then((auth) => {
-        this.currentUser = auth
+        this.currentUser = auth;
       });
   }
 

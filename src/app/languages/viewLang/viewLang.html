@@ -4,14 +4,21 @@
     <h1 ng-bind="::$ctrl.lang.name"></h1>
     <h2 ng-bind="::$ctrl.lang.abbreviation"></h2>
     <h4>Поля</h4>
+    <div ng-repeat="(id, field) in $ctrl.lang.fields">
+      <lang-field
+          field="field"
+          field-id="{{::id}}">
+      </lang-field>
+    </div>
   </md-card-content>
   <md-card-actions layout="row" layout-align="end">
-    <md-button type="submit"
+    <md-button
+      ui-sref="app.allLangs">
+      Назад
+    </md-button>
+    <md-button
       ui-sref="app.addLangField({langID: $ctrl.lang.$id})">
       Добавить Поле
-    </md-button>
-    <md-button type="submit">
-      Редактировать
     </md-button>
   </md-card-actions>
 

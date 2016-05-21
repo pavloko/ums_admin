@@ -1,7 +1,6 @@
 class AllLangsController {
-  constructor(Language, languages) {
+  constructor(languages) {
     'ngInject';
-    this._Language = Language;
     this.languages = languages;
   }
 }

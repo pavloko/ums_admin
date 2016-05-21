@@ -1,0 +1,12 @@
+<div layout layout-align="space-between center">
+  <span ng-bind="::$ctrl.field.fieldLabel"></span>
+  <div layout="row" layout-align="center">
+    <md-button
+      ui-sref="app.editField({langID: $ctrl.langID, fieldID: $ctrl.fieldId})">
+      Редактировать
+    </md-button>
+    <md-button ng-click="$ctrl.deleteLangField()">
+      Удалить
+    </md-button>
+  </div>
+</div>

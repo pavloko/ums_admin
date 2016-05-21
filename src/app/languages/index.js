@@ -1,8 +1,12 @@
 // Components
 import language from './components/language/language.component';
-import langFields from './components/langFields/langFields.directive';
+import langField from './components/langField/langField.component';
+import fieldForm from './components/fieldForm/fieldForm.component';
+
 // Services
 import Language from './language.service';
+import Field from './field.service';
+
 // View Languages
 import AllLangsController from './allLangs/allLangs.controller';
 import allLangRoute from './allLangs/allLangs.route';
@@ -15,20 +19,25 @@ import newLangRoute from './newLang/newLang.route';
 import ViewLangController from './viewLang/viewLang.controller';
 import viewLangRoute from './viewLang/viewLang.route';
 
-
 // Add Language Field
-import AddLangFieldController from './addLangField/addLangField.controller';
-import addLangFieldRoute from './addLangField/addLangField.route';
+import addFieldRoute from './langField/addField.route';
+import AddEditFieldController from './langField/addEditField.controller';
+
+// Edit Language Field
+import editFieldRoute from './langField/editField.route';
 
 export default angular.module('app.languages', [])
   .service('Language', Language)
+  .service('Field', Field)
   .component('language', language)
-  .directive('langFields', langFields)
+  .component('langField', langField)
+  .component('fieldForm', fieldForm)
   .config(allLangRoute)
   .config(newLangRoute)
   .config(viewLangRoute)
-  .config(addLangFieldRoute)
-  .controller('AddLangFieldController', AddLangFieldController)
+  .config(addFieldRoute)
+  .config(editFieldRoute)
+  .controller('AddEditFieldController', AddEditFieldController)
   .controller('ViewLangController', ViewLangController)
   .controller('NewLangController', NewLangController)
   .controller('AllLangsController', AllLangsController);

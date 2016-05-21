@@ -1,8 +1,20 @@
 class LanguageController {
-  constructor() {
+  constructor(Language, AppMessages, $mdToast) {
     'ngInject';
+    this._Language = Language;
+    this._$mdToast = $mdToast;
+    this._AppMessages = AppMessages;
   }
 
+  deleteLang(langID) {
+    this._Language.destroyLang(langID).then(
+      () => {
+        this._$mdToast.showSimple(this._AppMessages.langDeleteSuccess);
+      },
+      () => {
+        this._$mdToast.showSimple(this._AppMessages.generalError);
+      });
+  }
 }
 
 let language = {

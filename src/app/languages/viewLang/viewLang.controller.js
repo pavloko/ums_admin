@@ -1,9 +1,7 @@
 class ViewLangController {
-  constructor(language, $log) {
+  constructor(language) {
     'ngInject';
-
     this.lang = language;
-    $log.info(this.lang);
   }
 }
 

@@ -9,7 +9,9 @@ class AppHeaderController {
     this.appName = AppConstants.appName;
     // Close Sidenav when link to another state is clicked
     $scope.$on('$stateChangeStart', function() {
-      $mdSidenav('left').toggle();
+      if ($mdSidenav('left').isOpen()) {
+        $mdSidenav('left').toggle();
+      }
     });
   }
 

@@ -3,15 +3,12 @@ function addLangFieldRoute($stateProvider) {
   $stateProvider
     .state('app.addLangField', {
       url: '/lang/:langID/addLanguageField',
-      templateUrl: 'app/languages/addLangField/addLangField.html',
-      controller: 'AddLangFieldController',
+      templateUrl: 'app/languages/langField/addField.html',
+      controller: 'AddEditFieldController',
       controllerAs: '$ctrl',
       resolve: {
         isLoggedIn: function(Auth, $state) {
           return Auth.requireAuth().catch(() => $state.go('main'));
-        },
-        language: function(Language, $stateParams) {
-          return Language.getLang($stateParams.langID).$loaded();
         }
       }
     });
