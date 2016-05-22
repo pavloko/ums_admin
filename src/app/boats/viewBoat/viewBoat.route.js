@@ -1,10 +1,10 @@
-function newBoatRoute($stateProvider) {
+function viewBoatRoute($stateProvider) {
   'ngInject';
   $stateProvider
-    .state('app.singleBoat', {
+    .state('app.viewBoat', {
       url: '/boat/:boatID',
-      templateUrl: 'app/boats/singleBoat/singleBoat.html',
-      controller: 'singleBoatController',
+      templateUrl: 'app/boats/viewBoat/viewBoat.html',
+      controller: 'ViewBoatController',
       controllerAs: '$ctrl',
       resolve: {
         isLoggedIn: function(Auth, $state) {
@@ -17,4 +17,4 @@ function newBoatRoute($stateProvider) {
     });
 }
 
-export default newBoatRoute;
+export default viewBoatRoute;

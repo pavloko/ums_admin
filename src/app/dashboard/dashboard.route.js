@@ -9,6 +9,9 @@ function MainRoute($stateProvider) {
       resolve: {
         isLoggedIn: function(Auth, $state) {
           return Auth.requireAuth().catch(() => $state.go('main'));
+        },
+        boats: function(Boats) {
+          return Boats.getBoats();
         }
       }
     });

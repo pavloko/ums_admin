@@ -1,9 +1,9 @@
-function newBoatRoute($stateProvider) {
+function editBoatRoute($stateProvider) {
   'ngInject';
   $stateProvider
-    .state('app.newBoat', {
-      url: '/newBoat',
-      templateUrl: 'app/boats/newBoat/newBoat.html',
+    .state('app.editBoat', {
+      url: '/editBoat/:boatID',
+      templateUrl: 'app/boats/editBoat/editBoat.html',
       controller: 'BoatController',
       controllerAs: '$ctrl',
       resolve: {
@@ -14,4 +14,4 @@ function newBoatRoute($stateProvider) {
     });
 }
 
-export default newBoatRoute;
+export default editBoatRoute;

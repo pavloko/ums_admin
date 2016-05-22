@@ -1,4 +1,6 @@
 {
-  "firebase": "umsboats",
-  "public": "dist"
+  "hosting": {
+    "firebase": "umsboats",
+    "public": "dist"
+  }
 }

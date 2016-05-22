@@ -1,12 +1,22 @@
-import newBoatController from './newBoat/newBoat.controller';
+// Components
+import boatForm from './components/boatForm/boatForm.component';
+
+import BoatController from './Boat.controller';
+
+// Create Boat
 import newBoatRoute from './newBoat/newBoat.route';
 
-import singleBoatController from './singleBoat/singleBoat.controller';
-import singleBoatRoute from './singleBoat/singleBoat.route';
+// Edit Boat
+import editBoatRoute from './editBoat/editBoat.route';
 
+//View Boat
+import ViewBoatController from './viewBoat/viewBoat.controller';
+import viewBoatRoute from './viewBoat/viewBoat.route';
 
 export default angular.module('app.boats', [])
+  .component('boatForm', boatForm)
+  .config(editBoatRoute)
   .config(newBoatRoute)
-  .controller('newBoatController', newBoatController)
-  .config(singleBoatRoute)
-  .controller('singleBoatController', singleBoatController);
+  .controller('BoatController', BoatController)
+  .config(viewBoatRoute)
+  .controller('ViewBoatController', ViewBoatController);

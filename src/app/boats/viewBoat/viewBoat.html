@@ -1,0 +1,30 @@
+<md-card>
+  <md-card-title>
+    <md-card-title-text>
+      <span class="md-headline" ng-bind="::$ctrl.boat.name"></span>
+    </md-card-title-text>
+    <md-card-title-media>
+
+    </md-card-title-media>
+  </md-card-title>
+  <md-card-content>
+    <img ng-repeat="img in $ctrl.boat.images"
+         ng-src="{{ ::img.url }}" alt="{{ ::img.name }}"
+         class="md-media-xl card-media">
+    <div>
+      <h4>Видео ссылки:</h4>
+      <p ng-repeat="video in $ctrl.boat.videos">
+        <a href={{::video}} target="_blank">{{ ::video}}</a>
+      </p>
+    </div>
+  </md-card-content>
+  <md-card-actions layout layout-align="end">
+    <md-button ng-click="$ctrl.deleteBoat()">
+      Удалить
+    </md-button>
+    <md-button ui-sref="app.editBoat({boatID: $ctrl.boat.$id})">
+      Редактировать
+    </md-button>
+  </md-card-actions>
+
+</md-card>
