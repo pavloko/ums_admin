@@ -1,4 +1,4 @@
-function AppConfig ($stateProvider, $locationProvider, $urlRouterProvider,
+function AppConfig($stateProvider, $locationProvider, $urlRouterProvider,
                     $logProvider) {
   'ngInject';
   // Enable log

@@ -15,8 +15,8 @@ class Auth {
 
   attemptAuth(user) {
     return this.firebaseAuthObject.$authWithPassword(user)
-      .then((auth) => {
-        this.currentUser = auth;
+      .then((user) => {
+        this.currentUser = user;
       });
   }
 

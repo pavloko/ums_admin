@@ -11,7 +11,7 @@ class BoatController {
     this.boatID = $stateParams.boatID;
     this.boat = {
       name: '',
-      images: [],
+      images: {},
       videos: {},
       languages: []
     };
@@ -19,7 +19,6 @@ class BoatController {
   }
 
   createNewBoat() {
-    this._handleImages();
     this._Boats.saveBoat(this.boat)
       .then(
         (boat) => {
@@ -32,7 +31,6 @@ class BoatController {
   }
 
   editBoat() {
-    this._handleImages();
     this._Boats.editBoat(this.boat).then(
       () => {
         this._$mdToast.showSimple(this._AppMessages.editBoatSuccess);
@@ -49,17 +47,6 @@ class BoatController {
     } else if ( this.action === 'edit') {
       this.editBoat();
     }
-  }
-
-  _handleImages() {
-    angular.forEach(this.$scope.images, (image) => {
-      var imageToSave = {
-        url: image.lfDataUrl,
-        name: image.lfFileName,
-        size: image.lfFile.size
-      };
-      this.boat.images.push(imageToSave);
-    });
   }
 
   activate() {

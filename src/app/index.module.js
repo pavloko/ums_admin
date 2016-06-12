@@ -23,7 +23,6 @@ angular.module('app', [
   'ngAria',
   'ui.router',
   'firebase',
-  'lfNgMdFileInput',
 
 
   'app.main',

@@ -17,19 +17,12 @@
             </div>
           </md-input-container>
 
-          <md-input-container class="md-block" ng-if="$ctrl.boat.images.length">
-            <span ng-repeat="img in $ctrl.boat.images">
-              {{ ::img.name }}
-            </span>
-          </md-input-container>
-
-          <lf-ng-md-file-input lf-files="images" multiple
-              aria-label="Image upload"
-              lf-browse-label="Добавить"
-              lf-remove-label="Удалить"
-              lf-filesize="5MB"
-              lf-placeholder="Выберите фото">
-          </lf-ng-md-file-input>
+          <form-field title="Картинку"
+                      name="images"
+                      form="newBoatForm"
+                      obj="boat"
+                      images="$ctrl.boat.images">
+          </form-field>
 
           <md-input-container class="md-block">
             <label>Ссылка на видео 1</label>
@@ -70,7 +63,12 @@
           </md-input-container>
 
         </md-card-content>
-        <md-input-actions>
+        <md-input-actions layout layout-align="end">
+          <md-button ui-sref="app.viewBoat({boatID: $ctrl.boat.$id})"
+                     class="md-button"
+                     aria-label="Cancel">
+            Отмена
+          </md-button>
           <md-button type="submit" class="md-raised md-primary md-button"
             ng-bind="::$ctrl.actionTitle" aria-label="Action">
           </md-button>

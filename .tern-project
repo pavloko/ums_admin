@@ -1,0 +1,18 @@
+{
+  "libs": [
+      "browser",
+    ],
+  "loadEagerly": [
+      "importantfile.js"
+    ],
+  "plugins": {
+      "requirejs": {
+        "baseURL": "./",
+        "paths": {}
+       },
+      "angularjs": {
+        "baseURL": "./",
+        "paths": {}
+      }
+    }
+}
