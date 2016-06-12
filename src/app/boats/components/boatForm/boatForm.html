@@ -66,8 +66,9 @@
         <md-input-actions layout layout-align="end">
           <md-button ui-sref="app.viewBoat({boatID: $ctrl.boat.$id})"
                      class="md-button"
-                     aria-label="Cancel">
-            Отмена
+                     aria-label="Cancel"
+                     ng-if="$ctrl.action==='edit'">
+              Отмена
           </md-button>
           <md-button type="submit" class="md-raised md-primary md-button"
             ng-bind="::$ctrl.actionTitle" aria-label="Action">

@@ -1,0 +1,27 @@
+<md-card>
+  <md-card-title>
+    <span class="md-headline">
+      Редактируем {{$ctrl.lang.name}} для {{ $ctrl.boat.name }}
+    </span>
+  </md-card-title>
+  <md-card-contet>
+    <div layout layout-align="space-between center">
+      <h3>Название</h3>
+      <h3>Значение</h3>
+      <span></span>
+    </div>
+    <div layout layout-align="space-between center"
+            ng-repeat="field in $ctrl.lang.fields">
+      <span ng-bind="::field.fieldLabel" flex></span>
+      <span ng-bind="field.fieldValue" flex></span>
+      <div layout="row" layout-align="center">
+        <md-button
+          ng-click="$ctrl.editLangFieldValue(field)">
+          Редактировать
+        </md-button>
+        <!--<md-button ng-click="$ctrl.deleteLangField(field)">Удалить</md-button> -->
+      </div>
+    </div>
+  </md-card-contet>
+</md-card>
+

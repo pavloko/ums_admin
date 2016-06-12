@@ -13,11 +13,18 @@ import editBoatRoute from './editBoat/editBoat.route';
 import ViewBoatController from './viewBoat/viewBoat.controller';
 import viewBoatRoute from './viewBoat/viewBoat.route';
 
+
+// Edit Boat's Language
+import EditBoatLangController from './editBoatLang/editBoatLang.controller';
+import editBoatLangRoute from './editBoatLang/editBoatLang.route';
+
 export default angular.module('app.boats', [])
   .component('boatForm', boatForm)
   .directive('formField', formField)
   .config(editBoatRoute)
   .config(newBoatRoute)
+  .config(editBoatLangRoute)
+  .controller('EditBoatLangController', EditBoatLangController)
   .controller('BoatController', BoatController)
   .config(viewBoatRoute)
   .controller('ViewBoatController', ViewBoatController);

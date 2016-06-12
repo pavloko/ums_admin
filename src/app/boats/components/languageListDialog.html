@@ -1,0 +1,25 @@
+<md-dialog aria-label="Add Language">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Выберите язык</h2>
+      <span flex></span>
+    </div>
+  </md-toolbar>
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <md-list>
+        <md-list-item ng-repeat="language in $ctrl.languages"
+                      ng-click="$ctrl.selectLanguage(language)">
+          <div class="md-list-item-text">
+              {{ ::language.name }}
+          </div>
+        </md-list-item>
+      </md-list>
+    </div>
+  </md-dialog-content>
+  <md-dialog-actions>
+    <md-button ng-click="$ctrl.closeDialog()" aria-label="Cancel">
+      Отмена
+    </md-button>
+  </md-dialog-actions>
+</md-dialog>
