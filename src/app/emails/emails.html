@@ -1,10 +1,9 @@
 <md-list>
   <h1>Полученные адресса эл. почты</h1>
-  <md-list-item class="md-2-line" ng-repeat="email in $ctrl.emails track by
-    $index">
+  <md-list-item class="md-2-line" ng-repeat="email in $ctrl.emails">
     <div class="md-list-item-text">
-      Email: {{ email.$value }}
+      <h3>Email: {{ email.email }}</h3>
+      <h4>Дата: {{ email.date | date }}</h4>
     </div>
   </md-list-item>
-
 </md-list>
