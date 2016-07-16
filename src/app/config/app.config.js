@@ -6,8 +6,7 @@ function AppConfig($stateProvider, $locationProvider, $urlRouterProvider,
 
   // Route config
   $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
+    enabled: true
   });
 
   $stateProvider
