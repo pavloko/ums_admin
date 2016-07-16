@@ -14,6 +14,7 @@ import './services';
 import './helpers';
 import './boats';
 import './languages';
+import './emails';
 
 angular.module('app', [
   'ngMaterial',
@@ -32,7 +33,8 @@ angular.module('app', [
   'app.services',
   'app.helpers',
   'app.boats',
-  'app.languages'
+  'app.languages',
+  'app.emails'
 ])
   .constant('AppConstants', AppConstants)
   .constant('AppMessages', AppMessages)
