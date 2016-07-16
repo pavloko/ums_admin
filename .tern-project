@@ -9,10 +9,10 @@
       "requirejs": {
         "baseURL": "./",
         "paths": {}
-       },
+      },
       "angularjs": {
         "baseURL": "./",
         "paths": {}
       }
-    }
+  }
 }

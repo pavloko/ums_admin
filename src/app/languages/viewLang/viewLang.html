@@ -3,6 +3,15 @@
   <md-card-content ng-cloak>
     <h1 ng-bind="::$ctrl.lang.name"></h1>
     <h2 ng-bind="::$ctrl.lang.abbreviation"></h2>
+    <h5>Кнопка Характеристика</h5>
+    <p ng-bind="::$ctrl.lang.characteristics"></p>
+    <h5>Кнопка Картинки</h5>
+    <p ng-bind="::$ctrl.lang.pictures"></p>
+    <h5>Кнопка Видео</h5>
+    <p ng-bind="::$ctrl.lang.videos"></p>
+    <h5>Кнопка Отправить на Почту</h5>
+    <p ng-bind="::$ctrl.lang.send_mail"></p>
+
     <h4>Поля</h4>
     <div ng-repeat="(id, field) in $ctrl.lang.fields">
       <lang-field

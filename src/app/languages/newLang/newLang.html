@@ -39,6 +39,34 @@
         </div>
       </md-input-container>
 
+      <md-input-container class="md-block">
+        <label>Кнопка Характеристика</label>
+        <input name="abbreviation"
+               ng-model="$ctrl.lang.characteristics"
+               required/>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Кнопка Картинки</label>
+        <input name="abbreviation"
+               ng-model="$ctrl.lang.pictures"
+               required/>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Кнопка Видео</label>
+        <input name="abbreviation"
+               ng-model="$ctrl.lang.videos"
+               required/>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <label>Кнопка Отправить на Почту</label>
+        <input name="abbreviation"
+               ng-model="$ctrl.lang.send_mail"
+               required/>
+      </md-input-container>
+
   </md-card-content>
   <md-card-actions>
     <md-button ng-click="$ctrl.cancelNewLang()"

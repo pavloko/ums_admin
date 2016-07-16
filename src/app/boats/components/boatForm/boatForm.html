@@ -17,6 +17,20 @@
             </div>
           </md-input-container>
 
+          <md-input-container class="md-block">
+            <label>Ссылка на сайт</label>
+            <input name="web_link"
+                  ng-model="$ctrl.boat.web_link"
+                  required>
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>График</label>
+            <input name="graph"
+                  ng-model="$ctrl.boat.graph"
+                  required>
+          </md-input-container>
+
           <form-field title="Картинку"
                       name="images"
                       form="newBoatForm"

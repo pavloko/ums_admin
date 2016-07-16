@@ -19,9 +19,13 @@
           ng-click="$ctrl.editLangFieldValue(field)">
           Редактировать
         </md-button>
-        <!--<md-button ng-click="$ctrl.deleteLangField(field)">Удалить</md-button> -->
       </div>
     </div>
   </md-card-contet>
+  <md-card-actions layout layout-align="end">
+    <md-button ui-sref="app.viewBoat({boatID: $ctrl.boat.$id})">
+      Назад
+    </md-button>
+  </md-card-actions>
 </md-card>
 

@@ -13,7 +13,9 @@ class BoatController {
       name: '',
       images: {},
       videos: {},
-      languages: []
+      languages: [],
+      web_link: '',
+      graph: ''
     };
     this.activate();
   }
