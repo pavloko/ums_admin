@@ -26,6 +26,7 @@ class Boat {
     boatToEdit.name = boat.name;
     boatToEdit.images = boat.images;
     boatToEdit.videos = boat.videos;
+    boatToEdit.languages = boat.languages;
     return this.boats.$save(boatToEdit);
   }
 
