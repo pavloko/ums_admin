@@ -1,9 +1,12 @@
+<h1>Полученные адресса эл. почты</h1>
+<md-input-container style="margin-left: 16px;">
+    <input placeholder="Введите имейл или дату" ng-model="search"/>
+    <div class="hint">Дата формата "число-месяц-год"</div>
+</md-input-container>
 <md-list>
-  <h1>Полученные адресса эл. почты</h1>
-  <md-list-item class="md-2-line" ng-repeat="email in $ctrl.emails">
+  <md-list-item class="md-2-line" ng-repeat="email in $ctrl.emails | filter: search">
     <div class="md-list-item-text">
-      <h3>Email: {{ email.email }}</h3>
-      <h4>Дата: {{ email.date | date }}</h4>
+      <h3>Email: {{ email.email }}</h3><h4>Дата: {{ email.date | date }}</h4>
     </div>
   </md-list-item>
 </md-list>
