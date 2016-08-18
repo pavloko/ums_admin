@@ -3,90 +3,92 @@
         ng-submit="newBoatForm.$valid && $ctrl.actionFn()" novalidate>
     <md-card-content>
 
-          <md-input-container class="md-block">
-            <label>Название</label>
-            <input name="name"
-                  ng-model="$ctrl.boat.name"
-                  md-maxlength="30"
-                  required>
-            <div ng-messages="newBoatForm.name.$error">
-              <div ng-message="required">У лодки должно быть название.</div>
-              <div ng-message="md-maxlength">
-                Не нагружайте мозги, держитесь в пределах 30 символов.
-              </div>
-            </div>
-          </md-input-container>
+      <md-input-container class="md-block">
+        <label>Название</label>
+        <input name="name"
+               ng-model="$ctrl.boat.name"
+               md-maxlength="30"
+               required>
+        <div ng-messages="newBoatForm.name.$error">
+          <div ng-message="required">У лодки должно быть название.</div>
+          <div ng-message="md-maxlength">
+            Не нагружайте мозги, держитесь в пределах 30 символов.
+          </div>
+        </div>
+      </md-input-container>
 
-          <md-input-container class="md-block">
-            <label>Ссылка на сайт</label>
-            <input name="web_link"
-                  ng-model="$ctrl.boat.web_link"
-                  required>
-          </md-input-container>
+      <md-input-container class="md-block">
+        <label>Ссылка на сайт</label>
+        <input name="web_link"
+               ng-model="$ctrl.boat.web_link"
+               required>
+      </md-input-container>
 
-          <md-input-container class="md-block">
-            <label>График</label>
-            <input name="graph"
-                  ng-model="$ctrl.boat.graph"
-                  required>
-          </md-input-container>
+      <md-input-container class="md-block">
+        <label>График</label>
+        <input name="graph"
+               ng-model="$ctrl.boat.graph"
+               required>
+      </md-input-container>
 
-          <form-field title="Картинку"
-                      name="images"
-                      form="newBoatForm"
-                      obj="boat"
-                      images="$ctrl.boat.images">
-          </form-field>
+      <md-input-container md-no-float class="md-block md-icon-right md-icon-right-only"
+                          ng-repeat="image in $ctrl.boat.images track by $index">
+        <label for="image_url_{{::$index}}">Картинка №{{ $index + 1 }}</label>
+        <input name="image_url_{{::$index}}" ng-model="$ctrl.boat.images[$index]"
+               required>
+        <md-icon aria-label="Login" class="icons black" style="display:inline-block;"
+                 md-font-icon="ion-close-round"
+                 ng-click="$ctrl.removeItem('image', $index)">
+        </md-icon>
+      </md-input-container>
 
-          <md-input-container class="md-block">
-            <label>Ссылка на видео 1</label>
-            <input name="video_url_1"
-                  ng-model="$ctrl.boat.videos.url_1"
-                  ng-minlength="10"
-                  required>
-            <div class="hint"
-                ng-if="newBoatForm.video_url_1.$pristine &&
-                      !newBoatForm.video_url_1.$touched">
-              Добавьте видео лодки.
-            </div>
-            <div ng-messages="newBoatForm.video_url_1.$error">
-              <div ng-message="required">Без ссылки не получиться.</div>
-              <div ng-message="minlength">
-                Слишком короткая ссылка.
-              </div>
-            </div>
-          </md-input-container>
 
-          <md-input-container class="md-block">
-            <label>Ссылка на видео 2</label>
-            <input name="video_url_2"
-                  ng-model="$ctrl.boat.videos.url_2"
-                  ng-minlength="10"
-                  required>
-            <div class="hint"
-                ng-if="newBoatForm.video_url_2.$pristine &&
-                      !newBoatForm.video_url_2.$touched">
-              Добавьте видео лодки.
-            </div>
-            <div ng-messages="newBoatForm.video_url_2.$error">
-              <div ng-message="required">Без ссылки не получиться.</div>
-              <div ng-message="minlength">
-                Слишком короткая ссылка.
-              </div>
-            </div>
-          </md-input-container>
+      <md-button ng-click="$ctrl.addItem('image')">Добавить Картинку</md-button>
 
-        </md-card-content>
-        <md-input-actions layout layout-align="end">
-          <md-button ui-sref="app.viewBoat({boatID: $ctrl.boat.$id})"
-                     class="md-button"
-                     aria-label="Cancel"
-                     ng-if="$ctrl.action==='edit'">
-              Отмена
-          </md-button>
-          <md-button type="submit" class="md-raised md-primary md-button"
-            ng-bind="::$ctrl.actionTitle" aria-label="Action">
-          </md-button>
-        </md-input-actions>
-    </form>
-  </md-card>
+      <md-input-container md-no-float class="md-block md-icon-right md-icon-right-only"
+                          ng-repeat="video in $ctrl.boat.videos track by $index">
+        <label for="video_url_{{::$index}}">Видео №{{ $index + 1 }}</label>
+        <input name="video_url_{{::$index}}" ng-model="$ctrl.boat.videos[$index]"
+               required>
+        <md-icon aria-label="Login" class="icons black" style="display:inline-block;"
+                 md-font-icon="ion-close-round"
+                 ng-click="$ctrl.removeItem('video', $index)">
+        </md-icon>
+      </md-input-container>
+
+      <md-button ng-click="$ctrl.addItem('video')">Добавить Видео</md-button>
+
+      <!--<md-input-container class="md-block">-->
+      <!--<label>Ссылка на видео 1</label>-->
+      <!--<input name="video_url_1"-->
+      <!--ng-model="$ctrl.boat.videos.url_1"-->
+      <!--ng-minlength="10"-->
+      <!--required>-->
+      <!--<div class="hint"-->
+      <!--ng-if="newBoatForm.video_url_1.$pristine &&-->
+      <!--!newBoatForm.video_url_1.$touched">-->
+      <!--Добавьте видео лодки.-->
+      <!--</div>-->
+      <!--<div ng-messages="newBoatForm.video_url_1.$error">-->
+      <!--<div ng-message="required">Без ссылки не получиться.</div>-->
+      <!--<div ng-message="minlength">-->
+      <!--Слишком короткая ссылка.-->
+      <!--</div>-->
+      <!--</div>-->
+      <!--</md-input-container>-->
+
+
+    </md-card-content>
+    <md-input-actions layout layout-align="end">
+      <md-button ui-sref="app.viewBoat({boatID: $ctrl.boat.$id})"
+                 class="md-button"
+                 aria-label="Cancel"
+                 ng-if="$ctrl.action==='edit'">
+        Отмена
+      </md-button>
+      <md-button type="submit" class="md-raised md-primary md-button"
+                 ng-bind="::$ctrl.actionTitle" aria-label="Action">
+      </md-button>
+    </md-input-actions>
+  </form>
+</md-card>

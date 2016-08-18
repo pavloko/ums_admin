@@ -9,6 +9,9 @@ function editBoatRoute($stateProvider) {
       resolve: {
         isLoggedIn: function(Auth, $state) {
           return Auth.requireAuth().catch(() => $state.go('main'));
+        },
+        boat: function(Boats, $stateParams) {
+          return Boats.getBoat($stateParams.boatID);
         }
       }
     });

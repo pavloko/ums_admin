@@ -1,6 +1,6 @@
 // Components
 import boatForm from './components/boatForm/boatForm.component';
-import formField from './components/formField.directive/formField.directive';
+
 import BoatController from './Boat.controller';
 
 // Create Boat
@@ -20,7 +20,6 @@ import editBoatLangRoute from './editBoatLang/editBoatLang.route';
 
 export default angular.module('app.boats', [])
   .component('boatForm', boatForm)
-  .directive('formField', formField)
   .config(editBoatRoute)
   .config(newBoatRoute)
   .config(editBoatLangRoute)

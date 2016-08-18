@@ -11,8 +11,8 @@ class BoatController {
     this.boatID = $stateParams.boatID;
     this.boat = {
       name: '',
-      images: {},
-      videos: {},
+      images: [''],
+      videos: [''],
       languages: [],
       web_link: '',
       graph: ''
@@ -35,8 +35,8 @@ class BoatController {
   editBoat() {
     this._Boats.editBoat(this.boat).then(
       () => {
-        this._$mdToast.showSimple(this._AppMessages.editBoatSuccess);
         this._$state.go('app.viewBoat', {boatID: this.boat.$id});
+        this._$mdToast.showSimple(this._AppMessages.editBoatSuccess);
       },
       () => {
          this._$mdToast.showSimple(this._AppMessages.newBoatFail);
@@ -56,6 +56,24 @@ class BoatController {
     this._Boats.getBoat(this.boatID).then((boat) => {
       this.boat = boat;
     });
+  }
+
+  addItem(item) {
+    if (item ==='image') {
+      this.boat.images.push('');
+    } else if (item === 'video') {
+      this.boat.videos.push('');
+    }
+  }
+
+  removeItem(item, index) {
+    if (item === 'image') {
+      if (this.boat.images.length === 1) return;
+      this.boat.images.splice(index, 1);
+    } else if (item === 'video') {
+      if (this.boat.videos.length === 1) return;
+      this.boat.videos.splice(index, 1);
+    }
   }
 }
 

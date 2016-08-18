@@ -7,7 +7,6 @@ function EmailRoute($stateProvider) {
       title: 'Emails',
       controller: function(emails) {
         this.emails = emails;
-        console.log(this.emails);
       },
       controllerAs: '$ctrl',
       resolve: {
